@@ -2,42 +2,38 @@ const core = require('@actions/core');
 
 /**
 https://docs.docker.com/engine/reference/commandline/tag/#description
-Name components may contain lowercase letters, digits and separators.
-A separator is defined as a period, one or two underscores, or one or
-more dashes. A name component may not start or end with a separator.
+A tag name must be valid ASCII and may contain lowercase and uppercase
+letters, digits, underscores, periods and dashes. A tag name may not
+start with a period or a dash and may contain a maximum of 128
+characters.
 **/
 
 try {
-  const path = core.getInput('path');
+  const main = core.getInput('main')
+  const branch = core.getInput('branch');
   const prefix = core.getInput('prefix');
-  let result = path;
+  if (main == branch) {
+    core.setOutput('tag-name', 'latest');
+  } else {
+    let result = branch;
 
-  // Remove prefix
-  if (path.startsWith(prefix)) {
-    result = result.substr(prefix.length);
+    // Remove prefix
+    if (branch.startsWith(prefix)) {
+      result = result.substr(prefix.length);
+    }
+
+    // Remove invalid characters
+    result = result.replaceAll(/[^a-zA-Z0-9\._-]/g, '')
+
+    // Remove start and end periods and dashes
+    result = result.replace(/^[-\.]+/, '')
+    result = result.replace(/[-\.]+$/, '')
+
+    // Maximum of 128 characters
+    result = result.substr(0, 128)
+
+    core.setOutput('tag-name', result);
   }
-
-  // Remove start 
-  result = result.replace(/^\./, '');
-
-  // Replace '/' (we expect lots of / in paths)
-  result = result.replaceAll('/', '-');
-
-  // Replace excessive underscores
-  result = result.replaceAll(/___+/g, '__');
-
-  // Lower case
-  result = result.toLowerCase();
-
-  // Remove invalid characters
-  result = result.replaceAll(/[^a-z0-9\._-]/g, '')
-
-  // Remove start and end seperators
-  result = result.replace(/^[-\._]+/, '')
-  result = result.replace(/[-\._]+$/, '')
-
-  core.setOutput('image-name', result);
-
 } catch (error) {
   core.setFailed(error.message);
 }

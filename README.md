@@ -1,13 +1,15 @@
-# actions-path-to-docker-image-name
-[GitHub Action](https://github.com/features/actions) to convert a directory path to a valid name.
+# actions-branch-to-docker-tag-name
+[GitHub Action](https://github.com/features/actions) to convert a branch name to a valid docker tag name
+
+If the branch is your `main` branch then `latest` will be returned.
 
 ## Example
 ```yaml
-- uses: sleepypikachu/actions-path-to-docker-image-name@v1
-  id: path-to-docker-image
+- uses: sleepypikachu/actions-branch-to-docker-tag-name@v1
+  id: branch-to-docker-tag
   with:
-   path: "./docker/foo/bar"
-   prefix: "./docker"
+   branch: "feature/some-branch-name"
+   prefix: "feature/"
 ```
 
 

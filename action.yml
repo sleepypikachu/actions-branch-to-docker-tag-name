@@ -1,17 +1,22 @@
-name: 'Path to Docker Image Name'
-description: 'Converts a directory path to a valid docker image name'
+name: 'Branch to Docker Tag Name'
+description: 'Converts a branch to a valid docker tag name'
 inputs:
-  path:
-    description: 'The path to clean'
+  branch:
+    description: 'The branch to clean'
     required: true
   prefix:
     description: 'A prefix to remove'
     required: false
     default: ''
+  main:
+    description: 'The name of your main branch'
+    required: false
+    default: 'main'
+
 outputs:
   image-name:
-    description: 'Valid docker image name'
-    value: ${{ steps.clean.outputs.image-name }}
+    description: 'Valid docker tag name'
+    value: ${{ steps.clean.outputs.tag-name }}
 
 branding:
   icon: 'activity'

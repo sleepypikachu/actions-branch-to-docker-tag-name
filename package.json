@@ -1,23 +1,24 @@
 {
-  "name": "actions-path-to-docker-image-name",
+  "name": "actions-branch-to-docker-tag-name",
   "version": "1.0.0",
-  "description": "[GitHub Action](https://github.com/features/actions) to convert a directory path to a valid name.",
+  "description": "[GitHub Action](https://github.com/features/actions) to convert a branch to a valid docker tag name.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sleepypikachu/actions-path-to-docker-image-name.git"
+    "url": "git+https://github.com/sleepypikachu/actions-branch-to-docker-tag-name.git"
   },
   "keywords": [],
   "author": "Elliot Iddon",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sleepypikachu/actions-path-to-docker-image-name/issues"
+    "url": "https://github.com/sleepypikachu/actions-branch-to-docker-tag-name/issues"
   },
-  "homepage": "https://github.com/sleepypikachu/actions-path-to-docker-image-name#readme",
+  "homepage": "https://github.com/sleepypikachu/actions-branch-to-docker-tag-name#readme",
   "dependencies": {
-    "@actions/core": "^1.9.1"
+    "@actions/core": "^1.9.1",
+    "@actions/github": "^5.0.3"
   }
 }
