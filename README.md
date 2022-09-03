@@ -1,2 +1,13 @@
 # actions-path-to-docker-image-name
-GitHub Action to convert paths to valid docker image names
+[GitHub Action](https://github.com/features/actions) to convert a directory path to a valid name.
+
+## Example
+```yaml
+- uses: sleepypikachu/actions-path-to-docker-image-name@v1
+  id: path-to-docker-image
+  with:
+   path: "./docker/foo/bar"
+   prefix: "./docker"
+```
+
+

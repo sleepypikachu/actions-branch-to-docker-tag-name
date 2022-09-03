@@ -1,0 +1,23 @@
+{
+  "name": "actions-path-to-docker-image-name",
+  "version": "1.0.0",
+  "description": "[GitHub Action](https://github.com/features/actions) to convert a directory path to a valid name.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sleepypikachu/actions-path-to-docker-image-name.git"
+  },
+  "keywords": [],
+  "author": "Elliot Iddon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sleepypikachu/actions-path-to-docker-image-name/issues"
+  },
+  "homepage": "https://github.com/sleepypikachu/actions-path-to-docker-image-name#readme",
+  "dependencies": {
+    "@actions/core": "^1.9.1"
+  }
+}
