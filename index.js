@@ -25,12 +25,14 @@ try {
     // Remove invalid characters
     result = result.replaceAll(/[^a-zA-Z0-9\._-]/g, '')
 
-    // Remove start and end periods and dashes
+    // Remove starting end periods and dashes
     result = result.replace(/^[-\.]+/, '')
-    result = result.replace(/[-\.]+$/, '')
 
     // Maximum of 128 characters
     result = result.substr(0, 128)
+
+    // Remove ending periods and dashes
+    result = result.replace(/[-\.]+$/, '')
 
     core.setOutput('tag-name', result);
   }
