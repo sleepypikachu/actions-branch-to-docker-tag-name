@@ -24,13 +24,13 @@ try {
   result = result.replaceAll('/', '-');
 
   // Replace excessive underscores
-  result = result.replaceAll(/___+/, '__');
+  result = result.replaceAll(/___+/g, '__');
 
   // Lower case
   result = result.toLowerCase();
 
   // Remove invalid characters
-  result = result.replaceAll(/[^a-z0-9\._-]/, '')
+  result = result.replaceAll(/[^a-z0-9\._-]/g, '')
 
   // Remove start and end seperators
   result = result.replace(/^[-\._]+/, '')
