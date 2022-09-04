@@ -16,7 +16,6 @@ inputs:
 outputs:
   image-name:
     description: 'Valid docker tag name'
-    value: ${{ steps.clean.outputs.tag-name }}
 
 branding:
   icon: 'activity'
