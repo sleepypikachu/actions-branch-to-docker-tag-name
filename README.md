@@ -5,7 +5,7 @@ If the branch is your `main` branch then `latest` will be returned.
 
 ## Example
 ```yaml
-- uses: sleepypikachu/actions-branch-to-docker-tag-name@v1
+- uses: sleepypikachu/actions-branch-to-docker-tag-name@v1.0.0
   id: branch-to-docker-tag
   with:
    branch: "feature/some-branch-name"
